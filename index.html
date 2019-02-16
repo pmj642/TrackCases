@@ -19,6 +19,38 @@
         <h1 class="w-75 p-2 mx-auto text-white">TrackCases</h1>
     </header>
 
+    <!-- New Case Form -->
+    <section id="new-case-form" class="add-case-container mx-auto">
+        <div class="w-50 mx-auto">
+            <div class="w-75 p-5 mx-auto mt-5 theme-border bg-light rounded">
+                <form class="w-100">
+                    <label for="case-no">Case No.</label><br>
+                    <input type="text" class="w-50 p-2 mb-3 theme-border rounded font-weight-light" name="case-no" placeholder="Case Number" required><br>
+
+                    <label for="case-name">Name</label><br>
+                    <input type="text" class="w-50 p-2 mb-3 theme-border rounded font-weight-light" name="case-name" placeholder="Ex. State vs Jolly LLB" required><br>
+
+                    <label for="case-forum">Forum</label><br>
+                    <select class="w-50 p-2 mb-3 theme-border rounded font-weight-light" name="case-forum" placeholder="Ex. Supreme Court" required>
+                        <option value="None" selected>None</option>
+                        <option value="Supreme Court">Supreme Court</option>
+                        <option value="High Court">High Court</option>
+                        <option value="District Court">District Court</option>
+                    </select><br>
+
+                    <label for="case-date">Case Date</label><br>
+                    <input type="date" class="w-50 p-2 mb-3 theme-border rounded font-weight-light" name="case-date" required><br>
+
+                    <label for="case-file">File No.</label><br>
+                    <input type="text" class="w-50 p-2 mb-4 theme-border rounded font-weight-light" name="case-file" placeholder="File Number" required><br>
+
+                    <input type="submit" class="w-25 p-2 theme-button rounded text-white" value="Add Case">
+                    <input type="button" class="w-25 bg-danger border border-danger rounded text-white p-2 ml-3" value="Cancel" onclick="cnacelButton()">
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Scripts -->
     <script src="scripts/index.js"></script>
 </body>
