@@ -1,6 +1,15 @@
-/**
- * index.js
- * - All our useful JS goes here, awesome!
- */
+let newCaseForm = document.getElementById('new-case-form');
 
-console.log("JavaScript is amazing!");
+window.onclick = function(event) {
+    if(event.target == newCaseForm) {
+        newCaseForm.style.display = "none";
+    }
+}
+
+function getNewCase() {
+    newCaseForm.style.display = "block";
+}
+
+function cnacelButton() {
+    newCaseForm.style.display = "none";
+}
