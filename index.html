@@ -20,10 +20,10 @@
     </header>
 
     <!-- New Case Form -->
-    <section id="new-case-form" class="add-case-container mx-auto">
+    <section id="new-case-form-section" class="add-case-container mx-auto">
         <div class="w-50 mx-auto">
             <div class="w-75 p-5 mx-auto mt-5 theme-border bg-light rounded">
-                <form class="w-100">
+                <form id="new-case-form" class="w-100">
                     <label for="case-no">Case No.</label><br>
                     <input type="text" class="w-50 p-2 mb-3 theme-border rounded font-weight-light" name="case-no" placeholder="Case Number" required><br>
 
@@ -45,7 +45,7 @@
                     <input type="text" class="w-50 p-2 mb-4 theme-border rounded font-weight-light" name="case-file" placeholder="File Number" required><br>
 
                     <input type="submit" class="w-25 p-2 theme-button rounded text-white" value="Add Case">
-                    <input type="button" class="w-25 bg-danger border border-danger rounded text-white p-2 ml-3" value="Cancel" onclick="cnacelButton()">
+                    <input type="button" class="w-25 p-2 ml-3 bg-danger border border-danger rounded text-white" value="Cancel" onclick="cancelButton()">
                 </form>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="col">
                 <input type="button" class="p-2 rounded theme-button text-white" value="+ Add Case" onclick="getNewCase()">
 
-                <div id="case-container">
+                <div id="case-container" class="mt-5">
                 </div>
             </div>
         </div>
