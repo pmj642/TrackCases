@@ -15,6 +15,10 @@ if(casesArray.length) {
     });
 }
 else {
+    noCasesLeft();
+}
+
+function noCasesLeft() {
     // append a no case msg
     let noCases = document.createElement('div');
     noCases.setAttribute('class', 'row w-75 p-2 m-0 mb-3');
@@ -57,17 +61,17 @@ function newCaseMaker(Case) {
 
     // create and append new case
     let newCase = document.createElement('div');
-    newCase.setAttribute('class', 'row w-75 p-2 m-0 mb-3 theme-border rounded font-weight-light');
+    newCase.setAttribute('class', 'row w-75 p-2 m-0 mb-3 case-background theme-border rounded');
 
     let caseId = 'case-' + caseCount;
     let buttonId = 'delete-case-button-' + caseCount;
     newCase.setAttribute('id', caseId);
 
-    newCase.innerHTML = "<div class='w-50 p-0'>" + Case.caseNo + " | " + Case.caseDate + "</div>"
-                        + "<div class='w-50 p-0'>File No:  <span class='font-weight-bold'>" + Case.caseFile + "</span></div>"
+    newCase.innerHTML = "<div class='w-25 px-2 d-flex align-items-center'><div class='w-100 text-center'>" + Case.caseForum + "</div></div>"
+                        + "<div class='w-50 px-2 d-inline-block'><div class='w-100 p-0'>" + Case.caseNo + " | " + Case.caseDate + "</div>"
                         + "<div class='w-100 p-0 font-weight-bold'>" + Case.caseName + "</div>"
-                        + "<div class='w-50 p-0'>" + Case.caseForum + "</div>"
-                        + getDeleteButton();
+                        + "<div class='w-100 p-0'>File No: " + Case.caseFile + "</div></div>"
+                        + "<div class='w-25 px-2 d-flex align-items-center'><div class='w-100 text-center'>" + getDeleteButton() + "</div></div>";
 
     caseContainer.appendChild(newCase);
 
@@ -77,6 +81,9 @@ function newCaseMaker(Case) {
         let casesArrayIndex = casesArray.indexOf(Case);
         casesArray.splice(casesArrayIndex, 1);
         saveStateToLocalStorage();
+
+        if(!casesArray.length)
+            noCasesLeft();
     });
 
     ++caseCount;
